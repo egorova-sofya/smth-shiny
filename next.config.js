@@ -5,8 +5,7 @@ const nextConfig = {
   reactStrictMode: true,
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
-    prependData: `@import "variables.scss";`,
-    prependData: `@import "mixins.scss";`,
+    prependData: `@import "variables.scss"; @import "mixins.scss";`,
   },
   experimental: {
     fontLoaders: [

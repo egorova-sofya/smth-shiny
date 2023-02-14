@@ -3,7 +3,7 @@
 @import url("normalize.css");
 
 body {
-  min-width: 320px;
+  min-width: $mobile-screen;
 }
 
 .visually-hidden:not(:focus):not(:active),
