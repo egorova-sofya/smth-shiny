@@ -1,0 +1,89 @@
+@import "./variables";
+@import url("normalize.css");
+
+body {
+  min-width: 320px;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+/* hiding input type number arrows
+Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  appearance: textfield;
+}
+
+/* scrollbar style */
+body *::-webkit-scrollbar-thumb {
+  background-color: $primary;
+  border-radius: 10px;
+}
+
+body *::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+/* стиль для отображения трех строк */
+.cropText {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.skeletonGradient {
+  background-size: 200% 100%;
+  background-attachment: fixed;
+  background-image: var(--skeletonGradient);
+  animation: skeleton-gradient-animation 1s linear infinite;
+}
+
+@keyframes skeleton-gradient-animation {
+  from {
+    background-position: 100% 0;
+  }
+
+  to {
+    background-position: -100% 0;
+  }
+}
+
+.ant-picker-dropdown {
+  z-index: 9999;
+}
+
+/* для переноса input на новую строку */
+.ant-form-item-row {
+  display: block !important;
+}
+
+.ant-tabs .ant-tabs-tab + .ant-tabs-tab {
+  margin-left: 25px;
+}
