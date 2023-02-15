@@ -1,5 +1,4 @@
 import Head from "next/head";
-import "normalize.css";
 import Home from "@/components/Home/Home";
 
 export default function HomePage() {
