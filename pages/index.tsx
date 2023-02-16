@@ -1,5 +1,7 @@
 import Head from "next/head";
 import Home from "@/components/Home/Home";
+import HomeLayout from "@/components/Layouts/HomeLayout/HomeLayout";
+import { ReactElement } from "react";
 
 export default function HomePage() {
   return (
@@ -14,3 +16,7 @@ export default function HomePage() {
     </>
   );
 }
+
+HomePage.getLayout = function getLayout(page: ReactElement) {
+  return <HomeLayout>{page}</HomeLayout>;
+};
