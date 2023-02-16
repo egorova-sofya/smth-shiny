@@ -4,12 +4,11 @@ import s from "./HomeLayout.module.scss";
 
 const HomeLayout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
-    <>
+    <div className={s.homeWrapper}>
+      <main className={s.mainWrapper}>{children}</main>
       <DesktopHeader />
-      <div className={s.wrapper}>
-        <main className={s.container}>{children}</main>
-      </div>
-    </>
+      <footer>xxx</footer>
+    </div>
   );
 };
 
