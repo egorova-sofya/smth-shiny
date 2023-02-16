@@ -44,4 +44,13 @@
 .tagline {
   color: $white;
   font-size: 25px;
+  position: relative;
+  &::before {
+    content: "";
+    @include absoluteSetup();
+    height: 2px;
+    width: 100px;
+    background-color: $white;
+    top: 180%;
+  }
 }
