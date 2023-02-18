@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import DesktopHeader from "../Header/DesktopHeader";
+import ProductCard from "../ProductCard/ProductCard";
 import s from "./Home.module.scss";
 
 const Home = () => {
@@ -27,6 +28,11 @@ const Home = () => {
             <p className={s.tagline}>Найди свою прелесть ✨</p>
           </div>
         </div>
+      </section>
+      <section className={s.productsList}>
+        {[1].map((item) => (
+          <ProductCard key={item} />
+        ))}
       </section>
     </>
   );

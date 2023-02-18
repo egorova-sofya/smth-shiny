@@ -3,6 +3,17 @@ const path = require("path");
 
 const nextConfig = {
   reactStrictMode: true,
+  //TODO replace to real data
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cs2.livemaster.ru",
+        port: "",
+        pathname: "/storage/19/35/**",
+      },
+    ],
+  },
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
     prependData: `@import "variables.scss"; @import "mixins.scss";`,
