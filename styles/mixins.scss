@@ -14,3 +14,11 @@
   padding: 0;
   margin: 0;
 }
+
+/* string cropper */
+@mixin cropText($stringQuantity: 3) {
+  display: -webkit-box;
+  -webkit-line-clamp: $stringQuantity;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

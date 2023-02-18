@@ -50,11 +50,3 @@ body *::-webkit-scrollbar {
   width: 5px;
   height: 2px;
 }
-
-/* string cropper */
-.cropText {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
