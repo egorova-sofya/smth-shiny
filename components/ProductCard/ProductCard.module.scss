@@ -45,3 +45,10 @@
 .price {
   font-size: 25px;
 }
+
+.productsList {
+  @include contentIndents;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}

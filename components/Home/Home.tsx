@@ -1,15 +1,23 @@
 import Image from "next/image";
 import React from "react";
-import DesktopHeader from "../Header/DesktopHeader";
-import ProductCard from "../ProductCard/ProductCard";
+import { ParallaxBanner } from "react-scroll-parallax";
+import ProductCardsList from "../ProductCard/ProductCardsList";
 import s from "./Home.module.scss";
 
 const Home = () => {
   return (
-    <>
-      <section className={s.main}>
-        <div className={s.mainWrapper}>
-          <div className={s.logoWrapper}>
+    <div style={{ height: "200vh" }}>
+      <ParallaxBanner
+        style={{ height: "100vh" }}
+        layers={[
+          {
+            image: "/images/main-bg.jpg",
+            speed: -20,
+          },
+        ]}
+      >
+        <section className={s.homeSection}>
+          <div className={s.imagesWrapper}>
             <Image
               className={s.logoImage}
               src="/images/logo-image.svg"
@@ -25,16 +33,12 @@ const Home = () => {
               height={110}
               priority
             />
-            <p className={s.tagline}>Найди свою прелесть ✨</p>
           </div>
-        </div>
-      </section>
-      <section className={s.productsList}>
-        {[1].map((item) => (
-          <ProductCard key={item} />
-        ))}
-      </section>
-    </>
+          <p className={s.tagline}>Найди свою прелесть ✨</p>
+        </section>
+      </ParallaxBanner>
+      <ProductCardsList />
+    </div>
   );
 };
 

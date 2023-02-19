@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import Cart from "../Icons/cart";
+import Cart from "../Icons/Cart";
 import IconButton from "../Icons/IconButton";
 import s from "./ProductCard.module.scss";
 

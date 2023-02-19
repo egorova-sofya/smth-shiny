@@ -4,6 +4,7 @@ import { Open_Sans } from "@next/font/google";
 import { NextPage } from "next";
 import type { AppProps } from "next/app";
 import { ReactElement, ReactNode } from "react";
+import { ParallaxProvider } from "react-scroll-parallax";
 
 const openSans = Open_Sans({
   weight: ["400", "700"],
@@ -24,8 +25,10 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
     ((page: ReactNode) => <MainLayout>{page}</MainLayout>);
 
   return (
-    <div className={openSans.className}>
-      {getLayout(<Component {...pageProps} />)}
-    </div>
+    <ParallaxProvider>
+      <div className={openSans.className}>
+        {getLayout(<Component {...pageProps} />)}
+      </div>
+    </ParallaxProvider>
   );
 }
