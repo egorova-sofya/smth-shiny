@@ -6,7 +6,9 @@ const HomeLayout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <div className={s.homeWrapper}>
       <main className={s.mainWrapper}>{children}</main>
+      {/* <div style={{ overflow: "hidden" }}> */}
       <DesktopHeader />
+      {/* </div> */}
       <footer>xxx</footer>
     </div>
   );

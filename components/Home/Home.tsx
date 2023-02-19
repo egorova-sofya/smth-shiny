@@ -1,23 +1,37 @@
+import { addingStyleOnPageScroll } from "@/utils/addingStyleOnPageScroll";
 import Image from "next/image";
 import React from "react";
-import { ParallaxBanner } from "react-scroll-parallax";
+import { ParallaxBanner, useParallax } from "react-scroll-parallax";
 import ProductCardsList from "../ProductCard/ProductCardsList";
 import s from "./Home.module.scss";
 
 const Home = () => {
+  const frog = useParallax<HTMLDivElement>({
+    scale: [1.3, 0.3, "easeInQuad"],
+    translateY: ["40", "-40"],
+  });
+
+  addingStyleOnPageScroll({
+    className: s.scrolledImagesWrapperStyles,
+    scrollTrigger: 210,
+    elementId: "imagesWrapper",
+  });
+
   return (
-    <div style={{ height: "200vh" }}>
-      <ParallaxBanner
-        style={{ height: "100vh" }}
-        layers={[
-          {
-            image: "/images/main-bg.jpg",
-            speed: -20,
-          },
-        ]}
-      >
-        <section className={s.homeSection}>
-          <div className={s.imagesWrapper}>
+    <>
+      <section className={s.homeSection}>
+        <ParallaxBanner
+          style={{ height: "100vh" }}
+          layers={[
+            {
+              image: "/images/main-bg.jpg",
+              speed: -20,
+            },
+          ]}
+        />
+
+        <div className={s.imagesPositionWrapper}>
+          <div className={s.imagesWrapper} ref={frog.ref} id="imagesWrapper">
             <Image
               className={s.logoImage}
               src="/images/logo-image.svg"
@@ -29,16 +43,18 @@ const Home = () => {
             <Image
               src="/images/logo-text.svg"
               alt="Smth Shiny Logo"
-              width={350}
+              width={310}
               height={110}
               priority
             />
           </div>
-          <p className={s.tagline}>Найди свою прелесть ✨</p>
-        </section>
-      </ParallaxBanner>
+        </div>
+        <p className={s.tagline} id="tagline">
+          Найди свою прелесть ✨
+        </p>
+      </section>
       <ProductCardsList />
-    </div>
+    </>
   );
 };
 
