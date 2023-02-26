@@ -1,5 +1,31 @@
+.productsListWrapper {
+  @include contentIndents;
+}
+
+.headerWrapper {
+  position: relative;
+}
+
 .sectionTitle {
   @include titleIndents;
+}
+
+.showAllButton {
+  border: none;
+  background-color: transparent;
+  font-size: 18px;
+  cursor: pointer;
+  text-align: right;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+
+.productsList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
 .wrapper {
@@ -48,11 +74,4 @@
 
 .price {
   font-size: 25px;
-}
-
-.productsList {
-  @include contentIndents;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
 }
