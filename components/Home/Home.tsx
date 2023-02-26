@@ -1,24 +1,27 @@
-import { addingStyleOnPageScroll } from "@/utils/addingStyleOnPageScroll";
-import Image from "next/image";
-import React from "react";
-import { ParallaxBanner, useParallax } from "react-scroll-parallax";
+import React, { useEffect, useState } from "react";
+import { ParallaxBanner } from "react-scroll-parallax";
 import ProductCardsList from "../ProductCard/ProductCardsList";
 import s from "./Home.module.scss";
+import useGetClientWindowHeight from "@/hooks/useGetClientWindowHeight";
+import CustomHomeHeader from "../Header/CustomHomeHeader";
 
 const Home = () => {
-  const frog = useParallax<HTMLDivElement>({
-    scale: [1.3, 0.3, "easeInQuad"],
-    translateY: ["40", "-40"],
-  });
+  const [logoScale, setLogoScale] = useState(0);
 
-  addingStyleOnPageScroll({
-    className: s.scrolledImagesWrapperStyles,
-    scrollTrigger: 210,
-    elementId: "imagesWrapper",
-  });
+  const { clientWindowHeight } = useGetClientWindowHeight();
+
+  useEffect(() => {
+    let backgroundTransparencyVar = clientWindowHeight / 600;
+
+    if (backgroundTransparencyVar < 0.6) {
+      let boxShadowVar = backgroundTransparencyVar * 0.1;
+      setLogoScale(backgroundTransparencyVar);
+    }
+  }, [clientWindowHeight]);
 
   return (
     <>
+      <CustomHomeHeader />
       <section className={s.homeSection}>
         <ParallaxBanner
           style={{ height: "100vh" }}
@@ -29,29 +32,6 @@ const Home = () => {
             },
           ]}
         />
-
-        <div className={s.imagesPositionWrapper}>
-          <div className={s.imagesWrapper} ref={frog.ref} id="imagesWrapper">
-            <Image
-              className={s.logoImage}
-              src="/images/logo-image.svg"
-              alt="Smth Shiny Logo"
-              width={150}
-              height={150}
-              priority
-            />
-            <Image
-              src="/images/logo-text.svg"
-              alt="Smth Shiny Logo"
-              width={310}
-              height={110}
-              priority
-            />
-          </div>
-        </div>
-        <p className={s.tagline} id="tagline">
-          Найди свою прелесть ✨
-        </p>
       </section>
       <ProductCardsList />
     </>
