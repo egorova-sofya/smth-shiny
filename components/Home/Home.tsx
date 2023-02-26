@@ -4,21 +4,10 @@ import ProductCardsList from "../ProductCard/ProductCardsList";
 import s from "./Home.module.scss";
 import useGetClientWindowHeight from "@/hooks/useGetClientWindowHeight";
 import CustomHomeHeader from "../Header/CustomHomeHeader";
+import CarouselComponent from "../Carousel/Carousel";
+import PromotionList from "../Promotions/PromotionList";
 
 const Home = () => {
-  const [logoScale, setLogoScale] = useState(0);
-
-  const { clientWindowHeight } = useGetClientWindowHeight();
-
-  useEffect(() => {
-    let backgroundTransparencyVar = clientWindowHeight / 600;
-
-    if (backgroundTransparencyVar < 0.6) {
-      let boxShadowVar = backgroundTransparencyVar * 0.1;
-      setLogoScale(backgroundTransparencyVar);
-    }
-  }, [clientWindowHeight]);
-
   return (
     <>
       <CustomHomeHeader />
@@ -34,6 +23,7 @@ const Home = () => {
         />
       </section>
       <ProductCardsList />
+      <PromotionList />
     </>
   );
 };
