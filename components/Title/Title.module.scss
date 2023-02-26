@@ -1,0 +1,27 @@
+.titleWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: $black;
+  position: relative;
+  max-width: 300px;
+  padding: 0 20px;
+  &::before,
+  &::after {
+    content: "";
+    @include absoluteSetup;
+    height: 2px;
+    width: 30px;
+    background-color: $black;
+  }
+
+  &::before {
+    left: -10%;
+  }
+  &::after {
+    left: 110%;
+  }
+}

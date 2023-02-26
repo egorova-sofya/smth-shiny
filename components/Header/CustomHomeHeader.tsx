@@ -102,9 +102,9 @@ const CustomHomeHeader = () => {
             /> */}
         </div>
       </div>
-      <p className={s.tagline} id="tagline">
+      {/* <p className={s.tagline} id="tagline">
         Найди свою прелесть ✨
-      </p>
+      </p> */}
     </div>
   );
 };
