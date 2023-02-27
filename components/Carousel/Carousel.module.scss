@@ -28,19 +28,22 @@
   }
 }
 
+.mainWrapper ul:has(.indicator) {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
 .indicator {
-  display: none;
-  border-radius: 50%;
-  width: 10px;
-  height: 10px;
-  margin: 0 8px;
-  background: var(--white);
+  min-width: 30px;
+  height: 4px;
+  margin: 0 3px;
+  background: $white;
   opacity: 0.4;
-  box-shadow: 1px 1px 2px rgb(0 0 0 / 90%);
 }
 
 .selectedIndicator {
   opacity: 1;
-  background: var(--white);
+  background: $white;
   box-shadow: none;
 }
