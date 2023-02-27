@@ -1,0 +1,26 @@
+.promotionLink {
+  text-decoration: none;
+}
+
+.promotion {
+  min-height: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title,
+.description {
+  color: $white;
+  text-decoration: none;
+}
+
+.title {
+  font-size: 25px;
+  margin-bottom: 20px;
+}

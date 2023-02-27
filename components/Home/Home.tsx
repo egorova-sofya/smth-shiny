@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { ParallaxBanner } from "react-scroll-parallax";
 import ProductCardsList from "../ProductCard/ProductCardsList";
 import s from "./Home.module.scss";
-import useGetClientWindowHeight from "@/hooks/useGetClientWindowHeight";
 import CustomHomeHeader from "../Header/CustomHomeHeader";
-import CarouselComponent from "../Carousel/Carousel";
-import PromotionList from "../Promotions/PromotionList";
+import PromotionList from "../Promotion/PromotionList";
 
 const Home = () => {
   return (
     <>
       <CustomHomeHeader />
-      <section className={s.homeSection}>
+      <section className={s.sectionIndents}>
         <ParallaxBanner
           style={{ height: "100vh" }}
           layers={[
@@ -22,8 +20,10 @@ const Home = () => {
           ]}
         />
       </section>
-      <ProductCardsList />
-      <PromotionList />
+
+      <ProductCardsList className={s.sectionIndents} />
+
+      <PromotionList className={s.sectionIndents} />
     </>
   );
 };
