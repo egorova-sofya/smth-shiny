@@ -5,6 +5,7 @@ import s from "./Home.module.scss";
 import CustomHomeHeader from "../Header/CustomHomeHeader";
 import PromotionList from "../Promotion/PromotionList";
 import CategoriesList from "../Categories/CategoriesList";
+import About from "../About/About";
 
 const Home = () => {
   return (
@@ -27,6 +28,8 @@ const Home = () => {
       <PromotionList className={s.sectionIndents} />
 
       <CategoriesList className={s.sectionIndents} />
+
+      <About className={s.sectionIndents} />
     </>
   );
 };

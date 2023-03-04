@@ -20,10 +20,7 @@ const Category = () => {
           </div>
 
           <header className={s.header}>
-            <h4 className={s.categoryTitle}>
-              Product title Product title Product title Product title Product
-              title
-            </h4>
+            <h4 className={s.categoryTitle}>Earrings</h4>
           </header>
         </a>
       </li>

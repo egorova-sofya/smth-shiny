@@ -4,10 +4,10 @@ import s from "./CategoriesList.module.scss";
 import cn from "classnames";
 import Category from "./Category";
 
-interface IPromotionListProps
+interface Props
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
 
-const CategoriesList: FC<IPromotionListProps> = ({ className, ...props }) => {
+const CategoriesList: FC<Props> = ({ className, ...props }) => {
   return (
     <section {...props} className={cn(s.categoriesListWrapper, className)}>
       <Title className={s.sectionTitle} level={2}>
