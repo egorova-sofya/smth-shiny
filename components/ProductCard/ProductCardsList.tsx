@@ -19,11 +19,11 @@ const ProductCardsList: FC<Props> = ({ className, ...props }) => {
           All <Arrow />
         </button>
       </div>
-      <div className={s.productsList}>
+      <ul className={s.productsList}>
         {[1, 2, 3, 4, 5, 6].map((item) => (
           <ProductCard key={item} />
         ))}
-      </div>
+      </ul>
     </section>
   );
 };

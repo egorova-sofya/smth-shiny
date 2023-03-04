@@ -1,67 +1,60 @@
-.productsListWrapper {
+.categoriesListWrapper {
   @include contentIndents;
-}
-
-.headerWrapper {
-  position: relative;
 }
 
 .sectionTitle {
   @include titleIndents;
 }
 
-.showAllButton {
-  border: none;
-  background-color: transparent;
-  font-size: 18px;
-  cursor: pointer;
-  text-align: right;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0;
-}
-
-.productsList {
+.categoryList {
   @include disableListStyles;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
 
-.wrapper {
+.categoryItem a {
   max-width: 300px;
-  max-height: 450px;
+  max-height: 400px;
   text-align: center;
   background-color: $white;
-  box-shadow: 0px 1px 5px 1px rgb(0 0 0 / 15%);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: $black;
+}
+
+.categoryItem:nth-child(2n) a {
+  flex-direction: column-reverse;
 }
 
 .imageWrapper {
   position: relative;
-  height: 200px;
+  height: 300px;
 }
 
 .image {
   object-fit: cover;
 }
 
-.textWrapper {
-  padding: 25px 20px 10px 20px;
-}
-
-.title {
+.categoryTitle {
   @include cropText(2);
   font-size: 18px;
   font-weight: 400;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
-.footer {
+.categoryItem:nth-child(2n + 1) .categoryTitle {
+  margin-bottom: 0px;
+  margin-top: 40px;
+}
+
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
+
   &::after {
     content: "";
     @include absoluteSetup;
@@ -69,10 +62,12 @@
     background-repeat: no-repeat;
     width: 50px;
     height: 20px;
-    top: -55%;
+    top: 25%;
   }
 }
 
-.price {
-  font-size: 20px;
+.categoryItem:nth-child(2n) .header {
+  &::after {
+    top: 75%;
+  }
 }

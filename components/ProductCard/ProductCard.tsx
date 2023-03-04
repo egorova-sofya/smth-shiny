@@ -6,7 +6,7 @@ import s from "./ProductCard.module.scss";
 
 const ProductCard = () => {
   return (
-    <article className={s.wrapper}>
+    <li className={s.wrapper}>
       <div className={s.imageWrapper}>
         <Image
           className={s.image}
@@ -32,7 +32,7 @@ const ProductCard = () => {
           </IconButton>
         </footer>
       </div>
-    </article>
+    </li>
   );
 };
 

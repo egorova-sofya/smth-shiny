@@ -37,16 +37,17 @@ const Promotion: FC<IPromotion> = ({
 interface IPromotionListProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
 
-const PromotionList: FC<IPromotionListProps> = (...props) => {
+const PromotionList: FC<IPromotionListProps> = ({ className, ...props }) => {
   return (
-    <div {...props}>
+    <section className={className} {...props}>
+      <h2></h2>
       <CarouselComponent
         data={promotions.map((item) => ({
           id: item.id,
           children: <Promotion {...item} />,
         }))}
       />
-    </div>
+    </section>
   );
 };
 

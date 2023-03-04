@@ -4,6 +4,7 @@ import ProductCardsList from "../ProductCard/ProductCardsList";
 import s from "./Home.module.scss";
 import CustomHomeHeader from "../Header/CustomHomeHeader";
 import PromotionList from "../Promotion/PromotionList";
+import CategoriesList from "../Categories/CategoriesList";
 
 const Home = () => {
   return (
@@ -24,6 +25,8 @@ const Home = () => {
       <ProductCardsList className={s.sectionIndents} />
 
       <PromotionList className={s.sectionIndents} />
+
+      <CategoriesList className={s.sectionIndents} />
     </>
   );
 };
