@@ -1,0 +1,14 @@
+.footerWrapper {
+  background-color: #000;
+  position: relative;
+  color: #fff;
+  &::after {
+    content: "";
+    @include absoluteSetup;
+    width: 70px;
+    height: 70px;
+    top: -90%;
+    background-image: url("/images/sitting-magpie.svg");
+    background-repeat: no-repeat;
+  }
+}
