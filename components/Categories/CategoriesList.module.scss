@@ -14,7 +14,7 @@
 }
 
 .categoryItem a {
-  max-width: 300px;
+  max-width: 250px;
   max-height: 400px;
   text-align: center;
   background-color: $white;
@@ -58,12 +58,12 @@
     background-repeat: no-repeat;
     width: 50px;
     height: 20px;
-    top: 25%;
+    top: 35%;
   }
 }
 
 .categoryItem:nth-child(2n) .header {
   &::after {
-    top: 75%;
+    top: 65%;
   }
 }
