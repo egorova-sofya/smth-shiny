@@ -10,18 +10,6 @@
   @include titleIndents;
 }
 
-.showAllButton {
-  border: none;
-  background-color: transparent;
-  font-size: 18px;
-  cursor: pointer;
-  text-align: right;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0;
-}
-
 .productsList {
   @include disableListStyles;
   display: grid;

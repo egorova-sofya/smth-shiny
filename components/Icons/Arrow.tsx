@@ -1,6 +1,10 @@
-import React from "react";
+import React, { FC } from "react";
 
-const Arrow = () => {
+interface Props {
+  color?: string;
+}
+
+const Arrow: FC<Props> = ({ color }) => {
   return (
     <>
       <svg
@@ -12,7 +16,7 @@ const Arrow = () => {
       >
         <path
           d="M1 1L9 9.5L1 18"
-          stroke="#1A231F"
+          stroke={color ? color : "#1A231F"}
           strokeWidth="2"
           strokeLinejoin="round"
         />

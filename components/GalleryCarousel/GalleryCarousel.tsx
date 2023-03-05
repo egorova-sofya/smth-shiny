@@ -3,6 +3,7 @@ import CarouselComponent from "../Carousel/Carousel";
 import s from "./GalleryCarousel.module.scss";
 import galleryItems from "./gallery-items.json";
 import Image from "next/image";
+import ExpandingButton from "../Button/ExpandingButton";
 
 const GalleryCarousel = () => {
   return (
@@ -27,6 +28,7 @@ const GalleryCarousel = () => {
           </div>
         ))}
       </CarouselComponent>
+      <ExpandingButton>Go to th gallery</ExpandingButton>
     </>
   );
 };

@@ -29,7 +29,7 @@ const Home = () => {
 
       <CategoriesList className={s.sectionIndents} />
 
-      <About className={s.sectionIndents} />
+      <About />
     </>
   );
 };
