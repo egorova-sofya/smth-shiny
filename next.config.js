@@ -12,6 +12,12 @@ const nextConfig = {
         port: "",
         pathname: "/storage/19/35/**",
       },
+      {
+        protocol: "https",
+        hostname: "uprostim.com",
+        port: "",
+        pathname: "/wp-content/uploads/2021/05/**",
+      },
     ],
   },
   sassOptions: {

@@ -1,24 +1,32 @@
 import React, { CSSProperties, FC, ReactNode } from "react";
-import { Carousel } from "react-responsive-carousel";
+import { Carousel, CarouselProps } from "react-responsive-carousel";
 import s from "./Carousel.module.scss";
 import cn from "classnames";
 
-export interface Props {
-  data: Array<{ id: number; children: ReactNode }>;
+export interface Props extends Partial<CarouselProps> {
+  children: React.ReactChild[];
+  showIndicators?: boolean;
+  autoPlay?: boolean;
 }
 
 const indicatorStyles: CSSProperties = {};
 
-const CarouselComponent: FC<Props> = ({ data }) => {
+const CarouselComponent: FC<Props> = ({
+  showIndicators = true,
+  autoPlay = true,
+  ...props
+}) => {
   return (
     <div className={s.mainWrapper}>
       <Carousel
+        {...props}
         emulateTouch={true}
         infiniteLoop={true}
         showThumbs={false}
         showStatus={false}
         showArrows={false}
-        autoPlay
+        showIndicators={showIndicators}
+        autoPlay={autoPlay}
         interval={6000}
         width="100%"
         renderIndicator={(onClickHandler, isSelected, index, label) => {
@@ -47,11 +55,8 @@ const CarouselComponent: FC<Props> = ({ data }) => {
             />
           );
         }}
-      >
-        {data.map((item, index) => {
-          return <React.Fragment key={item.id}>{item.children}</React.Fragment>;
-        })}
-      </Carousel>
+      />
+
       <style>{`
 .carousel-slider {
   display: flex;

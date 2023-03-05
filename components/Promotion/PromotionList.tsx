@@ -41,12 +41,11 @@ const PromotionList: FC<IPromotionListProps> = ({ className, ...props }) => {
   return (
     <section className={className} {...props}>
       <h2></h2>
-      <CarouselComponent
-        data={promotions.map((item) => ({
-          id: item.id,
-          children: <Promotion {...item} />,
-        }))}
-      />
+      <CarouselComponent>
+        {promotions.map((item) => (
+          <Promotion key={item.id} {...item} />
+        ))}
+      </CarouselComponent>
     </section>
   );
 };
