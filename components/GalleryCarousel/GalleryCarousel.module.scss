@@ -2,8 +2,15 @@
   position: relative;
   width: 150px;
   height: 150px;
+  display: flex;
+  flex-direction: column;
 }
 
 .image {
   object-fit: cover;
+}
+
+.expandedButton {
+  margin-left: auto;
+  margin-top: 20px;
 }

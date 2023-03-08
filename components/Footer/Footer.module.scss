@@ -15,3 +15,39 @@
     background-repeat: no-repeat;
   }
 }
+
+.footerLinks {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.socialMediaList {
+  @include disableListStyles;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.socialMediaList li {
+  margin-right: 20px;
+}
+.socialMediaList li:last-child {
+  margin-right: 0;
+}
+
+.icon {
+  display: block;
+  width: 40px;
+  height: 26px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.telegramIcon {
+  background-image: url("/images/telegram.svg");
+}
+
+.vkIcon {
+  background-image: url("/images/vk.svg");
+}

@@ -28,7 +28,9 @@ const GalleryCarousel = () => {
           </div>
         ))}
       </CarouselComponent>
-      <ExpandingButton>Go to th gallery</ExpandingButton>
+      <ExpandingButton className={s.expandedButton}>
+        Go to the gallery
+      </ExpandingButton>
     </>
   );
 };
