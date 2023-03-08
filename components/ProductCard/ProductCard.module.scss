@@ -10,6 +10,11 @@
   @include titleIndents;
 }
 
+.expandingButton {
+  margin-left: auto;
+  padding-bottom: 10px;
+}
+
 .productsList {
   @include disableListStyles;
   display: grid;

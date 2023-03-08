@@ -15,7 +15,7 @@ const ProductCardsList: FC<Props> = ({ className, ...props }) => {
         <Title className={s.sectionTitle} level={2}>
           In stock
         </Title>
-        <ExpandingButton>All</ExpandingButton>
+        <ExpandingButton className={s.expandingButton}>All</ExpandingButton>
       </div>
       <ul className={s.productsList}>
         {[1, 2, 3, 4, 5, 6].map((item) => (
