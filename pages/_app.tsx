@@ -5,6 +5,8 @@ import { NextPage } from "next";
 import type { AppProps } from "next/app";
 import { ReactElement, ReactNode } from "react";
 import { ParallaxProvider } from "react-scroll-parallax";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 
 const openSans = Open_Sans({
   weight: ["400", "700"],

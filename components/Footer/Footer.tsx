@@ -23,7 +23,7 @@ const Footer = () => {
                 target="_blank"
                 className={cn(s.icon, s.telegramIcon)}
                 rel="noreferrer"
-                href="https://vk.com/sofya1212"
+                href="https://t.me/Sofia_ego"
               >
                 <span className="visually-hidden">Телеграм</span>
               </a>

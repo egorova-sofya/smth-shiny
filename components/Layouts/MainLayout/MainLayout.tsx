@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer/Footer";
 import React, { FC, ReactNode } from "react";
 import s from "./MainLayout.module.scss";
 
@@ -6,6 +7,7 @@ const MainLayout: FC<{ children: ReactNode }> = ({ children }) => {
     <>
       <div className={s.wrapper}>
         <main className={s.container}>{children}</main>
+        <Footer />
       </div>
     </>
   );

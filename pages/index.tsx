@@ -2,7 +2,6 @@ import Head from "next/head";
 import Home from "@/components/Home/Home";
 import HomeLayout from "@/components/Layouts/HomeLayout/HomeLayout";
 import { ReactElement } from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 export default function HomePage() {
   return (
