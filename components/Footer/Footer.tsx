@@ -24,9 +24,7 @@ const Footer = () => {
                 className={cn(s.icon, s.telegramIcon)}
                 rel="noreferrer"
                 href="https://t.me/Sofia_ego"
-              >
-                <span className="visually-hidden">Телеграм</span>
-              </a>
+              ></a>
             </li>
             <li>
               <a
@@ -34,9 +32,7 @@ const Footer = () => {
                 className={cn(s.icon, s.vkIcon)}
                 rel="noreferrer"
                 href="https://vk.com/sofya1212"
-              >
-                <span className="visually-hidden">Вконтакте</span>
-              </a>
+              ></a>
             </li>
           </ul>
         </div>
