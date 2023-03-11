@@ -1,0 +1,18 @@
+.galleryWrapper {
+  @include contentIndents;
+}
+
+.sectionTitle {
+  @include titleIndents;
+}
+
+.imagesWrapper {
+  column-count: 3;
+  gap: 0px 5px;
+}
+
+.image {
+  width: 100% !important;
+  height: auto !important;
+  margin-bottom: 1px; /* to match column gap */
+}

@@ -1,22 +1,28 @@
 import React from "react";
 import s from "./Gallery.module.scss";
 import Image from "next/image";
+import galleryItem from "./../GalleryCarousel/gallery-items.json";
+import Title from "../Title/Title";
 
 const Gallery = () => {
   return (
-    <>
-      <div>Gallery</div>
-
-      <Image
-        className={s.image}
-        src="https://cs2.livemaster.ru/storage/48/d9/d061213b33f77122d724c96da4wd--mittens-for-lovers-5-pcs-mittens-for-lovers-of-coffee-with-milk.jpg"
-        alt="Next.js Logo"
-        fill
-        sizes="(max-width: 768px) 100vw,
-                      (max-width: 1200px) 50vw,
-                      33vw"
-      />
-    </>
+    <section className={s.galleryWrapper}>
+      <Title level={1} className={s.sectionTitle}>
+        Gallery
+      </Title>
+      <div className={s.imagesWrapper}>
+        {galleryItem.map((item) => (
+          <Image
+            key={item.id}
+            className={s.image}
+            src={item.thumb_photo}
+            alt={item.title}
+            width={200}
+            height={300}
+          />
+        ))}
+      </div>
+    </section>
   );
 };
 
