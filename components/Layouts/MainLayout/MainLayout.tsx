@@ -7,7 +7,7 @@ const MainLayout: FC<{ children: ReactNode }> = ({ children }) => {
     <>
       <div className={s.wrapper}>
         <main className={s.container}>{children}</main>
-        <Footer />
+        <Footer className={s.footer} />
       </div>
     </>
   );
